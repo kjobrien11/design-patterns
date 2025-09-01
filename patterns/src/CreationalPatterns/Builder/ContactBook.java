@@ -15,6 +15,18 @@ public class ContactBook {
         this.notes = builder.notes;
 
     }
+
+    @Override
+    public String toString() {
+        return "ContactBook{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                ", notes='" + notes + '\'' +
+                '}';
+    }
+
     public static class ContactBookBuilder{
         String firstName;
         String lastName;
@@ -42,8 +54,8 @@ public class ContactBook {
             return this;
         }
 
-        public ContactBookBuilder build(){
-            return this;
+        public ContactBook build(){
+            return new ContactBook(this);
         }
 
     }
